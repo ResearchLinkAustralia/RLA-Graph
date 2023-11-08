@@ -45,3 +45,109 @@ match (n) return n.source as Source, n.type as Type, count(n) order by Source, T
 
 
 ## Relationships
+```
+match (n)-[r]-(m) where (n.source)<>(m.source) return n.source as Source1, m.source as Source2, n.type as Type1, m.type as Type2, count(r) as Relations
+```
+
+| Source1        | Source2             | Type1       | Type2       | Relations   |
+|:--------------:|:-------------------:|:-----------:|:-----------:|------------:|
+| orcid.org      | crossref.org        | organisation| organisation|     592     |
+| orcid.org      | grid.ac             | organisation| organisation|   1,423     |
+| orcid.org      | wikidata.org        | organisation| organisation|   2,278     |
+| wikidata.org   | ror.org             | organisation| organisation|     938     |
+| wikidata.org   | orcid.org           | organisation| organisation|   2,278     |
+| wikidata.org   | crossref.org        | organisation| organisation|     211     |
+| wikidata.org   | isni.ringgold.com   | organisation| organisation|     499     |
+| wikidata.org   | arc.gov.au          | organisation| grant       |  20,266     |
+| wikidata.org   | wikipedia.org       | organisation| wikipedia   |     797     |
+| wikidata.org   | grid.ac             | organisation| organisation|     613     |
+| orcid.org      | crossref.org        | researcher  | publication | 5,635,618   |
+| orcid.org      | grid.ac             | researcher  | organisation| 123,753     |
+| orcid.org      | pubmed.gov          | researcher  | publication | 263,578     |
+| orcid.org      | arc.gov.au          | researcher  | grant       |  41,401     |
+| orcid.org      | nhmrc.org           | researcher  | grant       |  87,467     |
+| orcid.org      | crossref.org        | researcher  | organisation|  53,769     |
+| orcid.org      | datacite.org        | researcher  | publication |  17,714     |
+| orcid.org      | datacite.org        | researcher  | dataset     |  14,426     |
+| grid.ac        | ror.org             | organisation| organisation|  26,700     |
+| grid.ac        | orcid.org           | organisation| organisation|   1,423     |
+| grid.ac        | orcid.org           | organisation| researcher  | 123,753     |
+| grid.ac        | wikidata.org        | organisation| organisation|     613     |
+| grid.ac        | isni.ringgold.com   | organisation| organisation|     534     |
+| grid.ac        | wikipedia.org       | organisation| wikipedia   |     790     |
+| grid.ac        | crossref.org        | organisation| organisation|     298     |
+| crossref.org   | orcid.org           | dataset     | publication |     557     |
+| crossref.org   | orcid.org           | dataset     | researcher  |   2,837     |
+| orcid.org      | crossref.org        | researcher  | dataset     |   2,837     |
+| orcid.org      | crossref.org        | grant       | organisation|  24,833     |
+| crossref.org   | orcid.org           | publication | researcher  | 5,635,618   |
+| crossref.org   | orcid.org           | publication | publication | 6,446,806   |
+| crossref.org   | pubmed.gov          | publication | publication | 412,355     |
+| crossref.org   | scopus.com          | publication | publication | 932,530     |
+| crossref.org   | twitter.com         | publication | tweet       | 293,522     |
+| arc.gov.au     | wikidata.org        | grant       | organisation|  20,266     |
+| arc.gov.au     | orcid.org           | grant       | researcher  |  41,401     |
+| pubmed.gov     | crossref.org        | publication | publication | 412,355     |
+| pubmed.gov     | orcid.org           | publication | researcher  | 263,578     |
+| isni.ringgold.com | ror.org          | organisation| organisation|     535     |
+| isni.ringgold.com | grid.ac          | organisation| organisation|     534     |
+| isni.ringgold.com | wikidata.org     | organisation| organisation|     499     |
+| orcid.org      | crossref.org        | dataset     | publication |     252     |
+| scopus.com     | crossref.org        | publication | publication | 932,530     |
+| orcid.org      | crossref.org        | publication | publication | 6,446,806   |
+| nhmrc.org      | orcid.org           | grant       | researcher  |  87,467     |
+| crossref.org   | orcid.org           | organisation| researcher  |  53,769     |
+| wikipedia.org  | wikidata.org        | wikipedia   | organisation|     797     |
+| wikipedia.org  | grid.ac             | wikipedia   | organisation|     790     |
+| grid.ac        | isni.org            | organisation| organisation|      35     |
+| crossref.org   | wikidata.org        | organisation| organisation|     211     |
+| crossref.org   | orcid.org           | organisation| organisation|     592     |
+| crossref.org   | orcid.org           | organisation| grant       |  24,833     |
+| crossref.org   | grid.ac             | organisation| organisation|     298     |
+| twitter.com    | crossref.org        | tweet       | publication | 293,522     |
+| orcid.org      | crossref.org        | dataset     | dataset     |   1,314     |
+| orcid.org      | datacite.org        | dataset     | dataset     |  14,097     |
+| scopus.com     | datacite.org        | publication | publication |     284     |
+| datacite.org   | orcid.org           | publication | researcher  |  17,714     |
+| datacite.org   | orcid.org           | publication | publication |  19,157     |
+| datacite.org   | orcid.org           | dataset     | researcher  |  14,426     |
+| datacite.org   | orcid.org           | dataset     | dataset     |  14,097     |
+| orcid.org      | datacite.org        | publication | publication |  19,157     |
+| orcid.org      | crossref.org        | grant       | grant       |      17     |
+| crossref.org   | orcid.org           | publication | dataset     |     252     |
+| orcid.org      | datacite.org        | dataset     | publication |     397     |
+| datacite.org   | orcid.org           | dataset     | publication |     741     |
+| datacite.org   | scopus.com          | dataset     | publication |      26     |
+| crossref.org   | orcid.org           | dataset     | dataset     |   1,314     |
+| datacite.org   | orcid.org           | publication | dataset     |     397     |
+| orcid.org      | crossref.org        | publication | dataset     |     557     |
+| twitter.com    | datacite.org        | tweet       | publication |   1,725     |
+| wikidata.org   | isni.org            | organisation| organisation|      30     |
+| isni.org       | ror.org             | organisation| organisation|      35     |
+| isni.org       | grid.ac             | organisation| organisation|      35     |
+| isni.org       | wikidata.org        | organisation| organisation|      30     |
+| orcid.org      | datacite.org        | publication | dataset     |     741     |
+| datacite.org   | twitter.com         | dataset     | tweet       |     424     |
+| orcid.org      | crossref.org        | publication | null        |      18     |
+| datacite.org   | twitter.com         | publication | tweet       |   1,725     |
+| scopus.com     | datacite.org        | publication | dataset     |      26     |
+| twitter.com    | datacite.org        | tweet       | dataset     |     424     |
+| datacite.org   | scopus.com          | publication | publication |     284     |
+| crossref.org   | twitter.com         | dataset     | tweet       |      11     |
+| crossref.org   | orcid.org           | null        | publication |      18     |
+| datacite.org   | pubmed.gov          | publication | publication |      10     |
+| crossref.org   | orcid.org           | grant       | grant       |      17     |
+| pubmed.gov     | datacite.org        | publication | publication |      10     |
+| crossref.org   | orcid.org           | null        | dataset     |       1     |
+| twitter.com    | crossref.org        | tweet       | dataset     |      11     |
+| orcid.org      | crossref.org        | dataset     | null        |       1     |
+| ror.org        | grid.ac             | organisation | organisation | 26,700   |
+| ror.org        | isni.ringgold.com   | organisation | organisation |    535   |
+| ror.org        | arc.gov.au          | organisation | organisation |  1,967   |
+| ror.org        | wikidata.org        | organisation | organisation |    938   |
+| ror.org        | isni.org            | organisation | organisation |     35   |
+| arc.gov.au     | abr.gov.au          | organisation | organisation |  3,855   |
+| arc.gov.au     | ror.org             | organisation | organisation |  1,967   |
+| abr.gov.au     | arc.gov.au          | organisation | organisation |  3,855   |
+
+
