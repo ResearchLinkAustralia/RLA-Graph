@@ -50,7 +50,7 @@ match (n)-[r]-(m) where (n.source)<>(m.source) return n.source as Source1, m.sou
 ```
 
 | Source1        | Source2             | Type1       | Type2       | Relations   |
-|:--------------:|:-------------------:|:-----------:|:-----------:|------------:|
+|:--------------|:-------------------|:-----------|:-----------|-----------:|
 | orcid.org      | crossref.org        | organisation| organisation|     592     |
 | orcid.org      | grid.ac             | organisation| organisation|   1,423     |
 | orcid.org      | wikidata.org        | organisation| organisation|   2,278     |
