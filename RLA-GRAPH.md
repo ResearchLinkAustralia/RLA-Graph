@@ -13,32 +13,28 @@ The following list provides the summary of information accessible via the RLA Gr
 match (n) return n.source as Source, n.type as Type, count(n) order by Source, Type
 ```
 
-| Source          | Type         |  count(n) |
-|-----------------|--------------|----------:|
-| abr.gov.au      | organisation |     6,019 |
-| arc.gov.au      | grant        |    20,352 |
-| arc.gov.au      | organisation |    14,152 |
-| crossref.org    | dataset      |     2,031 |
-| crossref.org    | grant        |        86 |
-| crossref.org    | organisation |     5,509 |
-| crossref.org    | publication  | 1,523,389 |
-| datacite.org    | dataset      |     8,392 |
-| datacite.org    | publication  |    12,421 |
-| grid.ac         | organisation |    13,350 |
-| isni.org        | organisation |        35 |
-| isni.ringgold.com | organisation |       538 |
-| nhmrc.org       | grant        |    14,790 |
-| orcid.org       | dataset      |    16,061 |
-| orcid.org       | grant        |    25,700 |
-| orcid.org       | organisation |   173,825 |
-| orcid.org       | publication  | 6,467,279 |
-| orcid.org       | researcher   |   668,895 |
-| pubmed.gov      | publication  |   440,153 |
-| ror.org         | organisation |   105,294 |
-| scopus.com      | publication  |   932,840 |
-| twitter.com     | tweet        |   293,433 |
-| wikidata.org    | organisation |     1,888 |
-| wikipedia.org   | wikipedia    |       474 |
+| Source         | Type           | Node Count   |
+|:---------------|:---------------|-------------:|
+| "abr.gov.au"   | "organisation" | 5,464        |
+| "arc.gov.au"   | "grant"        | 32,238       |
+| "arc.gov.au"   | "organisation" | 14,736       |
+| "crossref.org" | "dataset"      | 2,219        |
+| "crossref.org" | "organisation" | 6,586        |
+| "crossref.org" | "publication"  | 1,764,309    |
+| "datacite.org" | "dataset"      | 8,495        |
+| "datacite.org" | "publication"  | 13,546       |
+| "grid.ac"      | "organisation" | 14,282       |
+| "nhmrc.org"    | "grant"        | 28,547       |
+| "orcid.org"    | "dataset"      | 16,852       |
+| "orcid.org"    | "grant"        | 27,416       |
+| "orcid.org"    | "organisation" | 221,450      |
+| "orcid.org"    | "publication"  | 6,508,316    |
+| "orcid.org"    | "researcher"   | 815,442      |
+| "pubmed.gov"   | "publication"  | 468,975      |
+| "ror.org"      | "organisation" | 107,096      |
+| "scopus.com"   | "publication"  | 1,020,052    |
+| "twitter.com"  | "tweet"        | 347,962      |
+| "wikidata.org" | "organisation" | 1,444        |
 
 >[!Note]
 >RLA Graph is an undirected connected graph, that means all nodes in this graph have at least one link to other nodes. Any grant, publication, research data, or organisation with no links to other PIDs is excluded form this graph.
