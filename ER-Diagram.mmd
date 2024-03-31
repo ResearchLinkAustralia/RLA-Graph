@@ -1,0 +1,93 @@
+erDiagram
+    researcher {
+        string key
+        string source
+        string local_id
+        string full_name
+        string first_name
+        string last_name
+        string url
+        string orcid
+        string scopus_author_id
+        string last_updated
+        string updated_by
+    }
+    publication {
+        string key
+        string source
+        string local_id
+        string title
+        string abstract
+        string author_list
+        string publication_type
+        string url
+        string doi
+        string isbn
+        integer publication_year
+        integer scopus_eid
+        string last_updated
+        string updated_by
+    }
+    dataset {
+        string key
+        string source
+        string local_id
+        string last_updated
+        string title
+        string abstract
+        string author_list
+        string url
+        string doi
+        integer publication_year
+        string last_updated
+        string updated_by
+    }
+    grant {
+        string key
+        string source
+        string local_id
+        string title
+        string summary
+        string url
+        string purl
+        string doi
+        integer announcement_year
+        string for_codes
+        string funder
+        integer funding_amount
+        string funding_currency
+        string funding_scheme
+        integer start_year
+        integer end_year
+        string last_updated
+        string updated_by
+    }
+    organisation {
+        string key
+        string source
+        string local_id
+        string name
+        string url
+        string grid
+        string doi
+        string ror
+        string isni
+        string abn
+        string acn
+        string wikidata
+        string country
+        string state
+        string city
+        number latitude
+        number longitude
+        string last_updated
+        string updated_by
+    }
+
+    researcher ||--o{ publication : "Authored by"
+    researcher ||--o{ dataset : "Contributed to"
+    researcher ||--o{ grant : "Involved in"
+    researcher ||--o{ organisation : "Affiliated with"
+    publication ||--o{ dataset : "Based on"
+    publication ||--o{ organisation : "Published by"
+    grant ||--o{ organisation : "Funded by"

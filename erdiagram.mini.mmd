@@ -1,0 +1,35 @@
+erDiagram
+    Researcher {
+        string first_name "Researcher's first name"
+        string last_name "Researcher's last name"
+        string url "URL to the researcher's personal or institutional page"
+        string orcid "Researcher's ORCID identifier"
+        string scopus_author_id "Researcher's Scopus Author ID"
+    }
+    Publication {
+        string title "Title of the publication"
+        string abstract "Abstract of the publication"
+        string publication_type "Type of publication (e.g., journal article, conference paper)"
+        string doi "Digital Object Identifier for the publication"
+        integer publication_year "Year the publication was released"
+    }
+    Dataset {
+        string title "Title of the dataset"
+        string abstract "Abstract or summary of the dataset"
+        string url "URL where the dataset can be accessed"
+        string doi "Digital Object Identifier for the dataset"
+    }
+    Grant-Project {
+        string title "Title of the grant or funded project"
+        string summary "Summary of the grant or project"
+        string url "URL to more information about the grant"
+        integer announcement_year "Year the grant was announced"
+        string funder "The organization funding the grant"
+    }
+    Organisation {
+        string name "Name of the organisation"
+        string url "URL to the organisation's official website"
+        string abn "Australian Business Number of the organisation"
+        string country "Country where the organisation is located"
+        string city "City where the organisation is based"
+    }

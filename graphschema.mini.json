@@ -1,0 +1,133 @@
+{
+  "researcher": {
+    "title": "Researcher",
+    "description": "Representing the researcher, research staff, author or an individual who participates in a research project.",
+    "type": "object",
+    "properties": {
+      "key": {"type": "string"},
+      "source": {"type": "string"},
+      "local_id": {"type": "string"},
+      "full_name": {"type": "string"},
+      "first_name": {"type": "string"},
+      "last_name": {"type": "string"},
+      "url": {"type": "string"},
+      "orcid": {"type": "string"},
+      "scopus_author_id": {"type": "string"},
+      "last_updated": {"type": "string", "format": "dateTime"},
+      "updated_by": {"type": "string"}     
+    },
+    "required": ["key", "source", "local_id", "last_updated", "full_name"]
+  },
+  "publication": {
+    "title": "Publication",
+    "description": "Representing conference papers, journal articles, grey literature and books.",    
+    "type": "object",
+    "properties": {
+      "key": {"type": "string"},
+      "source": {"type": "string"},
+      "local_id": {"type": "string"},
+      "title": {"type": "string"},
+      "abstract": {"type": "string"},
+      "author_list": {"type": "string"},
+      "publication_type": {"type": "string"},
+      "url": {"type": "string"},
+      "doi": {"type": "string"},
+      "isbn": {"type": "string"},
+      "publication_year": {"type": "integer"},
+      "scopus_eid": {"type": "integer"},
+      "last_updated": {"type": "string", "format": "dateTime"},      
+      "updated_by": {"type": "string"}            
+    },
+    "required": ["key", "source", "local_id", "last_updated", "title", "author_list"]
+  },
+  "dataset": {
+    "title": "Dataset",
+    "description": "Representing a dataset that is an input or output of research activity.",        
+    "type": "object",
+    "properties": {
+      "key": {"type": "string"},
+      "source": {"type": "string"},
+      "local_id": {"type": "string"},
+      "last_updated": {"type": "string", "format": "dateTime"},
+      "title": {"type": "string"},
+      "abstract": {"type": "string"},
+      "author_list": {"type": "string"},
+      "url": {"type": "string"},
+      "doi": {"type": "string"},
+      "publication_year": {"type": "integer"},
+      "last_updated": {"type": "string", "format": "dateTime"},      
+      "updated_by": {"type": "string"}      
+
+    },
+    "required": ["key", "source", "local_id", "last_updated", "title", "author_list"]
+  },
+  "grant": {
+    "title": "Grant",
+    "description": "Representing a funded project activity.",        
+    "type": "object",
+    "properties": {
+      "key": {"type": "string"},
+      "source": {"type": "string"},
+      "local_id": {"type": "string"},
+      "title": {"type": "string"},
+      "summary": {"type": "string"},      
+      "url": {"type": "string"},
+      "purl": {"type": "string"},
+      "doi": {"type": "string"},
+      "announcement_year": {"type": "integer"},
+      "for_codes": {"type": "string"},
+      "funder": {"type": "string"},
+      "funding_amount": {"type": "integer"},
+      "funding_currency": {"type": "string"},
+      "funding_scheme": {"type": "string"},
+      "start_year": {"type": "integer"},
+      "end_year": {"type": "integer"},
+      "last_updated": {"type": "string", "format": "dateTime"},      
+      "updated_by": {"type": "string"}            
+    },
+    "required": ["key", "source", "local_id", "last_updated", "title"]
+  },
+  "organisation": {
+    "title": "Organisation",
+    "description": "Representing a research organisation like a university or a research institute.",        
+    "type": "object",
+    "properties": {
+      "key": {"type": "string"},
+      "source": {"type": "string"},
+      "local_id": {"type": "string"},
+      "name": {"type": "string"},
+      "url": {"type": "string"},
+      "grid": {"type": "string"},
+      "doi": {"type": "string"},
+      "ror": {"type": "string"},
+      "isni": {"type": "string"},
+      "abn": {"type": "string"},
+      "acn": {"type": "string"},      
+      "wikidata": {"type": "string"},
+      "country": {"type": "string"},
+      "state": {"type": "string"},
+      "city": {"type": "string"},
+      "latitude": {"type": "number"},
+      "longitude": {"type": "number"},
+      "last_updated": {"type": "string", "format": "dateTime"},      
+      "updated_by": {"type": "string"}      
+    },
+    "required": ["key", "source", "local_id", "last_updated", "name"]
+  },
+  "relation": {
+    "title": "Relation",
+    "description": "Representing a relation between two nodes.",        
+    "type": "object",
+    "properties": {
+      "from_key": {"type": "string"},
+      "to_uri": {"type": "string"},
+      "source": {"type": "string"},
+      "type": {"type": "string"},
+      "start_date": {"type": "string", "format": "dateTime"},      
+      "end_date": {"type": "string", "format": "dateTime"},         
+      "last_updated": {"type": "string", "format": "dateTime"},      
+      "updated_by": {"type": "string"}      
+    }
+  }
+
+}
